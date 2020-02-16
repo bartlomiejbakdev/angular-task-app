@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+
+<head>
+  <meta charset="utf-8" />
+  <title>TaskApp</title>
+  <meta name="description" content="App to menege yours tasks!" />
+
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div *ngIf="isVisibleLogin">
+      <app-toolbar></app-toolbar>
+      <app-login-panel (eventVisable) = "switch($event)"></app-login-panel>
+    </div>
+    <div *ngIf="isVisibleApp">
+    <app-toolbar-in-app (eventVisable) = "switch($event)"></app-toolbar-in-app>
+    <app-add-task></app-add-task>
+    <br>
+    <app-to-do-task></app-to-do-task>
+    <app-done-task></app-done-task>
+
+    </div>
+
+
+
+  </div>
+  <app-footer></app-footer>
+</body>
+
+</html>

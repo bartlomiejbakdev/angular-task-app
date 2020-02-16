@@ -1,0 +1,22 @@
+.container-toolbar-in-app{
+  background-color: blue;
+  padding:30px;
+  font-size: 17px;
+}
+button{
+ float: right;
+}
+
+
+.container3{
+  float: left;
+  color: white;
+}
+.astext {
+  background:none;
+  border:none;
+  margin:0;
+  padding:0;
+  cursor: pointer;
+  font-size: 12px;
+}

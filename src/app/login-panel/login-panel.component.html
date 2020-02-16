@@ -1,0 +1,23 @@
+<div class="container">
+
+  <div class="login-panel">
+    <h1>Sign In</h1>
+    <br><br>
+    <div class="input">
+      Login: <input [(ngModel)]="nickName">
+    </div>
+    <div class="input">
+      Password: <input type="password" [(ngModel)]="password">
+    </div>
+    <div class="button">
+      <button (click)="login()">Sign in</button>
+    </div>
+    <br>
+    <p>Don't have an account?</p>
+    <button class="astext">Sign Up.</button>
+
+  </div>
+  <div class="space"></div>
+
+
+</div>
