@@ -1,11 +1,5 @@
-html{
-  padding: 0;
-  margin: -8px;
-}
 body
 {
-  margin: 0;
-  padding: 0;
   background-color: white;
 	color: #efefef;
     font-family: 'Open Sans', sans-serif;
@@ -19,5 +13,4 @@ body
   text-align: center;
   background-color: lightslategray;
   height: 820px;
-
 }

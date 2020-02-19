@@ -1,4 +1,10 @@
 <div class="container-to-do-task">
   <p>to-do-task works!</p>
+  <ul>
+    <li *ngFor="let listTasks of listTasks">
+      {{listTasks.name}}
+    </li>
+  </ul>
 </div>
+
 

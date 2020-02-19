@@ -1,4 +1,5 @@
 .container-done-task{
-  display: inline-block;
+  display: flex;
   padding: 100px;
+  justify-content: space-around;
 }

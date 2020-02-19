@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ListService } from '../services/list.service';
+import { ElList } from '../interfaces/el-list';
 
 @Component({
   selector: 'app-to-do-task',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ToDoTaskComponent implements OnInit {
 
-  constructor() { }
+  listTasks: Array<ElList>;
+
+  constructor(private sList: ListService) {
+    this.sList.getList().subscribe((data: Array<ElList>) => {
+      this.listTasks = data;
+    });
+  }
 
   ngOnInit(): void {
   }
+
+
+
 
 }

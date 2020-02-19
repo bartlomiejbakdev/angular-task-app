@@ -1,22 +1,16 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
+import { LoginService } from '../services/login.service';
 
 @Component({
   selector: 'app-toolbar-in-app',
   templateUrl: './toolbar-in-app.component.html',
   styleUrls: ['./toolbar-in-app.component.css']
 })
-export class ToolbarInAppComponent implements OnInit {
+export class ToolbarInAppComponent {
 
-  constructor() { }
-
-  @Output()
-  eventVisable = new EventEmitter<string>();
-
-  ngOnInit(): void {
-  }
+  constructor(private toLoginService: LoginService) { }
 
   logout() {
-    console.log('logout');
-    this.eventVisable.emit('logout');
+    this.toLoginService.sendLogout();
   }
 }

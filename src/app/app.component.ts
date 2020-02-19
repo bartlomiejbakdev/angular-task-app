@@ -1,27 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { LoginService } from './services/login.service';
+import {ListService} from './services/list.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  providers: [LoginService, ListService]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'task-app';
 
   isVisibleLogin = true;
-  isVisibleApp = false;
+  isVisibleApp: boolean;
 
-  switch(to) {
-    console.log(to);
-    if (this.isVisibleLogin === false) {
-      this.isVisibleLogin = true;
-      this.isVisibleApp = false;
-    } else if (this.isVisibleLogin === true) {
-      this.isVisibleLogin = false;
-      this.isVisibleApp = true;
+  constructor(private toLoginService: LoginService) {
 
-    }
-
+  }
+  ngOnInit(): void {
+    this.toLoginService.getAnswer().subscribe(data => {
+      this.isVisibleApp = data;
+      if (data === true) {
+        this.isVisibleLogin = false;
+      } else {
+        this.isVisibleLogin = true;
+      }
+    });
   }
 
 }
