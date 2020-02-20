@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { ListService } from '../services/list.service';
+import { ElList } from '../interfaces/el-list';
 
 @Component({
   selector: 'app-done-task',
   templateUrl: './done-task.component.html',
   styleUrls: ['./done-task.component.css']
 })
-export class DoneTaskComponent implements OnInit {
+export class DoneTaskComponent {
 
-  constructor() { }
+  listTasks: Array<ElList>;
 
-  ngOnInit(): void {
+
+
+  constructor(private sList: ListService) {
+    this.sList.getList().subscribe((data: Array<ElList>) => {
+      this.listTasks = data.filter(l => l.status !== false);
+    });
   }
 
 }

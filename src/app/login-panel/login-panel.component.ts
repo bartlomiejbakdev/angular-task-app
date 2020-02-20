@@ -11,7 +11,7 @@ export class LoginPanelComponent {
 
   constructor(private toLoginService: LoginService) {
 
-  } 
+  }
 
   nickName: string;
   password: string;

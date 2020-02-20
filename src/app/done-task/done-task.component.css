@@ -1,5 +1,3 @@
 .container-done-task{
-  display: flex;
   padding: 100px;
-  justify-content: space-around;
 }

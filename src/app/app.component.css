@@ -14,3 +14,7 @@ body
   background-color: lightslategray;
   height: 820px;
 }
+.lists{
+  display: flex;
+  justify-content: space-around;
+}

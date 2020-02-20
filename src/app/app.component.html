@@ -1,5 +1,5 @@
 <div class="container">
-  <div *ngIf="isVisibleLogin">
+  <div *ngIf="isVisibleLogin"> 
     <app-toolbar></app-toolbar>
     <app-login-panel></app-login-panel>
   </div>
@@ -7,8 +7,10 @@
     <app-toolbar-in-app ></app-toolbar-in-app>
     <app-add-task></app-add-task>
     <br>
+    <div class="lists">
     <app-to-do-task></app-to-do-task>
     <app-done-task></app-done-task>
+    </div>
   </div>
 </div>
 <app-footer></app-footer>

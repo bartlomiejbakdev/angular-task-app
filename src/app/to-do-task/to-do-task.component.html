@@ -2,9 +2,10 @@
   <p>to-do-task works!</p>
   <ul>
     <li *ngFor="let listTasks of listTasks">
+
       {{listTasks.name}}
+      <button (click)="doTask(listTasks.id)">Done</button>
+      <button (click)="removeTask(listTasks.id)">Remove</button>
     </li>
   </ul>
 </div>
-
-

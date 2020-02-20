@@ -13,13 +13,19 @@ export class ToDoTaskComponent implements OnInit {
 
   constructor(private sList: ListService) {
     this.sList.getList().subscribe((data: Array<ElList>) => {
-      this.listTasks = data;
+      this.listTasks = data.filter(l => l.status !== true);
     });
   }
 
   ngOnInit(): void {
   }
 
+  doTask(index) {
+    this.sList.doTask(index);
+  }
+  removeTask(index) {
+    this.sList.removeTask(index);
+  }
 
 
 
