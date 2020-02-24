@@ -1,3 +1,7 @@
+.login-panel{
+  text-align: center;
+}
+
 .container{
   background-color: blue;
   width: 350px;
@@ -6,8 +10,10 @@
   margin-top: 100px;
 }
 .input{
+  text-align: right;
   display: inline-flexbox;
   padding: 15px;
+  margin-right: 40px;
 
 }
 h1{

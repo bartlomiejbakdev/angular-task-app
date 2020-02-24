@@ -1,9 +1,9 @@
 <div class="container-done-task">done-task works!
 
     <ul>
-        <li *ngFor="let listTasks of listTasks">
+        <li appTaskDone *ngFor="let listTasks of listTasks">
 
-            {{listTasks.name}}
+            {{listTasks.name}} end at: {{listTasks.endDate.toLocaleTimeString()}} {{listTasks.endDate.toLocaleDateString()}}
 
         </li>
     </ul>

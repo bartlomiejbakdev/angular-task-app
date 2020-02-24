@@ -1,7 +1,7 @@
 <div class="container-to-do-task">
   <p>to-do-task works!</p>
   <ul>
-    <li *ngFor="let listTasks of listTasks">
+    <li appDate [date]="listTasks.createDate" *ngFor="let listTasks of listTasks">
 
       {{listTasks.name}}
       <button (click)="doTask(listTasks.id)">Done</button>

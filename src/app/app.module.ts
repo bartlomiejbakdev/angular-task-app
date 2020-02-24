@@ -11,6 +11,9 @@ import { ToolbarInAppComponent } from './toolbar-in-app/toolbar-in-app.component
 import { AddTaskComponent } from './add-task/add-task.component';
 import { ToDoTaskComponent } from './to-do-task/to-do-task.component';
 import { DoneTaskComponent } from './done-task/done-task.component';
+import { TaskDoneDirective } from './shared/task-done.directive';
+import { DateDirective } from './shared/date.directive';
+import { SignInPanelComponent } from './sign-in-panel/sign-in-panel.component';
 
 
 @NgModule({
@@ -22,7 +25,10 @@ import { DoneTaskComponent } from './done-task/done-task.component';
     ToolbarInAppComponent,
     AddTaskComponent,
     ToDoTaskComponent,
-    DoneTaskComponent
+    DoneTaskComponent,
+    TaskDoneDirective,
+    DateDirective,
+    SignInPanelComponent
   ],
   imports: [
     BrowserModule,

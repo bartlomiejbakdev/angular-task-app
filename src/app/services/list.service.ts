@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
-import { ElList } from '../interfaces/el-list';
-import { Observable, BehaviorSubject } from 'rxjs';
-import { ThrowStmt } from '@angular/compiler';
+import { Injectable, OnInit } from '@angular/core';
+import { Task } from '../interfaces/interface-task';
+import { Observable, BehaviorSubject, Subject } from 'rxjs';
+import { LoginService } from './login.service';
 
 
 @Injectable({
@@ -9,9 +9,12 @@ import { ThrowStmt } from '@angular/compiler';
 })
 export class ListService {
 
-  private list: Array<ElList> = [];
-  private sub = new BehaviorSubject<Array<ElList>>([]);
+
+
+  private list: Array<Task> = [];
+  private sub = new BehaviorSubject<Array<Task>>([]);
   private count = 0;
+  currentUser: string;
 
   constructor() {
     this.list = [{ id: this.count, name: 'mycie', createDate: new Date(), status: false }];
@@ -20,19 +23,20 @@ export class ListService {
   }
 
   addTaskService(taskName: string) {
-    console.log(this.list);
-    console.log(taskName);
-    this.list.push({ id: this.count, name: taskName, createDate: new Date(), status: false });
+    this.list.push({ id: this.count, name: taskName, createDate: new Date(), status: false, creator: this.currentUser });
     this.count = this.count + 1;
-    console.log(this.list);
     this.sub.next(this.list);
   }
 
-  getList(): Observable<Array<ElList>> {
+  getUser(user: string) {
+    this.currentUser = user;
+  }
+
+  getList(): Observable<Array<Task>> {
     return this.sub.asObservable();
   }
 
-  doTask(index) {
+  doTask(index: number) {
 
     const toAdd = this.list.find(e => {
       return e.id === index;
@@ -41,7 +45,8 @@ export class ListService {
     toAdd.endDate = new Date();
     this.sub.next(this.list);
   }
-  removeTask(index) {
+
+  removeTask(index: number) {
     this.list = this.list.filter(e => {
       return e.id !== index;
     });

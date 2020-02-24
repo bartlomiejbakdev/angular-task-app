@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ListService } from '../services/list.service';
-import { ElList } from '../interfaces/el-list';
+import { Task } from '../interfaces/interface-task';
 
 @Component({
   selector: 'app-to-do-task',
@@ -9,21 +9,23 @@ import { ElList } from '../interfaces/el-list';
 })
 export class ToDoTaskComponent implements OnInit {
 
-  listTasks: Array<ElList>;
+  listTasks: Array<Task>;
 
   constructor(private sList: ListService) {
-    this.sList.getList().subscribe((data: Array<ElList>) => {
-      this.listTasks = data.filter(l => l.status !== true);
-    });
   }
 
   ngOnInit(): void {
+    this.sList.getList().subscribe((data: Array<Task>) => {
+      this.listTasks = data.filter(l => l.status !== true);
+      this.listTasks = this.listTasks.filter(l => l.creator === this.sList.currentUser);
+    });
   }
 
-  doTask(index) {
+  doTask(index: number) {
     this.sList.doTask(index);
   }
-  removeTask(index) {
+
+  removeTask(index: number) {
     this.sList.removeTask(index);
   }
 

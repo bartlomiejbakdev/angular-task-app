@@ -1,7 +1,7 @@
 <div class="container">
 
   <div class="login-panel">
-    <h1>Sign In</h1>
+    <h1>Login in</h1>
     <br><br>
     <div class="input">
       Login: <input [(ngModel)]="nickName">
@@ -10,14 +10,13 @@
       Password: <input type="password" [(ngModel)]="password">
     </div>
     <div class="button">
-      <button (click)="login()">Sign in</button>
+      <button (click)="login()">Login in</button>
     </div>
     <br>
     <p>Don't have an account?</p>
-    <button class="astext">Sign Up.</button>  <!-- Service incoming -->
+    <button (click)="signIn()" class="astext">Sign Up.</button> <!-- Service incoming -->
 
   </div>
-  <div class="space"></div>
 
 
 </div>
