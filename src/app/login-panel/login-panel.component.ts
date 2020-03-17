@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { LoginService } from '../services/login.service';
 import { SignInService } from '../services/sign-in.service';
 import { ListService } from '../services/list.service';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -11,7 +12,7 @@ import { ListService } from '../services/list.service';
 })
 export class LoginPanelComponent {
 
-  constructor(private toLoginService: LoginService, private toSignIn: SignInService, private toListIn: ListService) {
+  constructor(private toLoginService: LoginService, private toSignIn: SignInService, private toListIn: ListService, private location: Location) {
   }
 
   nickName: string;

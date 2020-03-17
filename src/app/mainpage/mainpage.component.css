@@ -1,0 +1,16 @@
+body, html {
+    height: 100%;
+}
+.bg {
+    background: url("../../assets/background-main.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 900px;
+    color:white;
+    text-align: center;
+    padding-top: 350px;
+    font-size: 100px;
+    letter-spacing: 30px;
+}

@@ -34,6 +34,7 @@ export class SignInService {
 
   createAccount(nickName: string, password: string) {
     this.clients.push({ nick: nickName, pass: password });
+    console.log(this.clients);
     this.beh.next(this.clients);
     this.answer = false;
     this.sub.next(this.answer);

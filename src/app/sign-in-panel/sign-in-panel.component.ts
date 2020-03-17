@@ -18,6 +18,7 @@ export class SignInPanelComponent implements OnInit {
   }
 
   createAccount() {
+    console.log('wysyłam' + this.nickName + this.password);
     this.signInService.createAccount(this.nickName, this.password);
     this.sendNewClients();
   }

@@ -1,3 +1,29 @@
+<app-toolbar>
+    <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+        <span class="navbar-text">
+      <a class="nav-link" href="register">Sign up!</a>
+    </span>
+    </div>
+</app-toolbar>
+<div class="content">
+    <br><br><br><br><br><br><br><br>
+    <div class="container">
+        <h1>Login</h1>
+        <div class="form-group">
+            <label for="InputUsername">Username</label>
+            <input class="form-control" id="InputUsername" placeholder="Your username" [(ngModel)]="nickName">
+        </div>
+        <div class="form-group">
+            <label for="InputPassword1">Password</label>
+            <input type="password" class="form-control" id="InputPassword1" placeholder="Password"
+                   [(ngModel)]="password">
+        </div>
+        <button class="btn btn-primary" (click)="login()">Login</button>
+    </div>
+</div>
+<!--
 <div class="container">
 
   <div class="login-panel">
@@ -14,9 +40,10 @@
     </div>
     <br>
     <p>Don't have an account?</p>
-    <button (click)="signIn()" class="astext">Sign Up.</button> <!-- Service incoming -->
+    <button (click)="signIn()" class="astext">Sign Up.</button>
 
   </div>
 
 
 </div>
+-->
