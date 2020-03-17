@@ -1,11 +1,18 @@
 <div class="container-to-do-task">
-  <p>to-do-task works!</p>
-  <ul>
-    <li appDate [date]="listTasks.createDate" *ngFor="let listTasks of listTasks">
-
-      {{listTasks.name}}
-      <button (click)="doTask(listTasks.id)">Done</button>
-      <button (click)="removeTask(listTasks.id)">Remove</button>
-    </li>
-  </ul>
+    <h1>Tasks</h1>
+    <ul>
+        <li style="list-style: none;" appDate [date]="listTasks.id" *ngFor="let listTasks of listTasks">
+            <div class="list-group">
+                <a class="list-group-item list-group-item-action">
+                    <div class="d-flex w-100 justify-content-between" >
+                        <h5 class="mb-1"></h5>
+                        <small class="text-muted">{{listTasks.createDate.toDateString()}}</small>
+                    </div>
+                    <p class="mb-1">{{listTasks.name}}</p>
+                </a>
+            </div>
+        </li>
+    </ul>
 </div>
+
+

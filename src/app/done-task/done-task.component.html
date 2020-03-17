@@ -1,10 +1,16 @@
-<div class="container-done-task">done-task works!
-
+<div class="container-done-task">
+    <h1>Done</h1>
     <ul>
-        <li appTaskDone *ngFor="let listTasks of listTasks">
-
-            {{listTasks.name}} end at: {{listTasks.endDate.toLocaleTimeString()}} {{listTasks.endDate.toLocaleDateString()}}
-
+        <li style="list-style: none;" *ngFor="let listTasks of listTasks" class="list">
+            <div  class="list-group">
+                <a class="list-group-item list-group-item-action">
+                    <div  appTaskDone class="d-flex w-100 justify-content-between" >
+                        <h5 class="mb-1"></h5>
+                        <small class="text-muted">end at: {{listTasks.endDate.toLocaleTimeString()}} {{listTasks.endDate.toLocaleDateString()}}</small>
+                    </div>
+                    <p class="mb-1">{{listTasks.name}}</p>
+                </a>
+            </div>
         </li>
     </ul>
 

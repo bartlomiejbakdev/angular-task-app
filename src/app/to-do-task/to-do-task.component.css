@@ -1,3 +1,22 @@
-.container-to-do-task{
-  padding:100px;
+.container-to-do-task {
+    padding: 100px;
 }
+
+.list-group {
+    min-width: 400px;
+    cursor: pointer;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-bottom:  5px;
+}
+
+.list-group-item:hover {
+    background: #343a40 !important;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+}
+
+
